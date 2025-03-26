@@ -2,44 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Appointments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Appointment Booking</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
     <nav class="main-nav">
         <div class="nav-brand">Appointment System</div>
         <div class="nav-links">
-            <span class="user-info">Logged in as: <span id="currentUser"></span></span>
+            <span class="user-info">Logged in as: <span id="currentUser">Helpdesk</span></span>
             <button class="logout-btn">Logout</button>
         </div>
     </nav>
 
     <div class="appointments-container">
-        <!-- Helpdesk View -->
         <div id="helpdeskView" class="role-view">
-            <h1>New Appointment</h1>
-            <form id="appointmentForm">
-                <input type="text" id="title" placeholder="Title" required>
-                <input type="date" id="date" required>
-                <input type="time" id="time" required>
-                <textarea id="description" placeholder="Details"></textarea>
-                <button type="submit">Create Appointment</button>
-            </form>
-        </div>
-
-        <!-- Engineer View -->
-        <div id="engineerView" class="role-view">
-            <h1>My Appointments</h1>
-            <div id="appointmentsList" class="appointments-grid"></div>
-        </div>
-
-        <!-- Admin View -->
-        <div id="adminView" class="role-view">
-            <div class="admin-actions">
-                <a href="admin.html" class="admin-btn">Admin Dashboard</a>
+            <h1>Batch Service Requests</h1>
+            
+            <!-- Date Selection -->
+            <div class="form-group">
+                <label for="batchDate">Appointment Date*</label>
+                <input type="date" id="batchDate" required>
             </div>
-            <h1>All Appointments</h1>
-            <div id="allAppointments" class="appointments-grid"></div>
+            
+            <!-- Import Controls -->
+            <div class="import-controls">
+                <div class="file-upload">
+                    <label for="csvUpload" class="upload-btn">Import CSV/Excel</label>
+                    <input type="file" id="csvUpload" accept=".csv,.xlsx,.xls">
+                    <button id="downloadTemplate">Download Template</button>
+                </div>
+            </div>
+            
+            <!-- Table Form -->
+            <div class="table-wrapper">
+                <table id="appointmentTable" class="batch-table">
+                    <thead>
+                        <tr>
+                            <th>Asset Tag</th>
+                            <th class="type-suffix">-Type</th>
+                            <th>User Name</th>
+                            <th>Contact</th>
+                            <th>Time</th>
+                            <th>Remarks</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="sortableTableBody">
+                        <!-- Rows will be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-controls">
+                <button id="addRowBtn">+ Add Row</button>
+                <button id="submitBatchBtn" class="primary">Submit All Requests</button>
+            </div>
         </div>
     </div>
 
