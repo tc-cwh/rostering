@@ -1,0 +1,15 @@
+project-root/
+├── index.html          # Login
+├── appointment.html    # Booking/Viewing
+├── calendar.html       # Calendar View
+├── status-update.html  # Status Updates
+├── admin.html          # Admin Panel
+├── css/
+│   └── style.css       # All styles
+└── js/
+    ├── auth.js         # Authentication
+    ├── appointments.js # Appointment logic
+    ├── calendar.js     # Calendar init
+    ├── status.js       # Status updates
+    ├── admin.js        # Admin functions
+    └── common.js       # Shared utilities

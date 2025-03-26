@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Status</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">[...same nav...]</nav>
+
+    <div class="status-container">
+        <h1>Update Appointment Status</h1>
+        <div class="status-controls">
+            <select id="appointmentSelect" class="full-width">
+                <option value="">Select Appointment</option>
+            </select>
+            <select id="statusSelect" class="full-width">
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="completed">Completed</option>
+            </select>
+            <button onclick="updateStatus()" class="full-width">Update Status</button>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/status.js"></script>
+</body>
+</html>

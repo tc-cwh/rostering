@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">[...same nav...]</nav>
+
+    <div class="admin-container">
+        <div class="admin-section">
+            <h2>User Management</h2>
+            <div class="user-form">
+                <input type="text" id="newUsername" placeholder="Username">
+                <input type="password" id="newPassword" placeholder="Password">
+                <select id="newUserRole">
+                    <option value="helpdesk">Helpdesk</option>
+                    <option value="engineer">Engineer</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button onclick="createUser()">Add User</button>
+            </div>
+            <table id="usersTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="admin-section">
+            <h2>Appointment Management</h2>
+            <table id="appointmentsTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

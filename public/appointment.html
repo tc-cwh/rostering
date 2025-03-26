@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-brand">Appointment System</div>
+        <div class="nav-links">
+            <span class="user-info">Logged in as: <span id="currentUser"></span></span>
+            <button class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="appointments-container">
+        <!-- Helpdesk View -->
+        <div id="helpdeskView" class="role-view">
+            <h1>New Appointment</h1>
+            <form id="appointmentForm">
+                <input type="text" id="title" placeholder="Title" required>
+                <input type="date" id="date" required>
+                <input type="time" id="time" required>
+                <textarea id="description" placeholder="Details"></textarea>
+                <button type="submit">Create Appointment</button>
+            </form>
+        </div>
+
+        <!-- Engineer View -->
+        <div id="engineerView" class="role-view">
+            <h1>My Appointments</h1>
+            <div id="appointmentsList" class="appointments-grid"></div>
+        </div>
+
+        <!-- Admin View -->
+        <div id="adminView" class="role-view">
+            <div class="admin-actions">
+                <a href="admin.html" class="admin-btn">Admin Dashboard</a>
+            </div>
+            <h1>All Appointments</h1>
+            <div id="allAppointments" class="appointments-grid"></div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/appointments.js"></script>
+</body>
+</html>
